@@ -59,6 +59,6 @@ public class Homepage {
 	public void serch() {
 		search.click();	
 	}
-	
+////////////////////////////////
 }
 
