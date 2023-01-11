@@ -1,24 +1,34 @@
- stages {
-        stage('Build') {
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') 
+		{
             steps {
-                echo 'Build app'
+                echo 'Build App'
             }
         }
-   stage('Test') {
+		
+		stage('Test') 
+		{
             steps {
-                echo 'App tested'
+                echo 'Test App'
             }
         }
-   stage('Deploy') {
+		
+		stage('Deploy') 
+		{
             steps {
-                echo 'Deploye'
+                echo 'Deployed  World'
             }
         }
-  post
-  {
-   always
-   {
-    emailtext body: 'Summary', subject: 'Pipeline Status', to: 'yesrk786@gmail.com'
-   }
-  }
     }
+	post
+	{
+		always 
+		{
+			emailext body: '', subject: 'Pipeline Status', to: 'yesrk786@gmail.com'
+		}
+	}
+}
+
